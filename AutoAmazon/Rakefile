@@ -17,8 +17,8 @@ namespace :test do
   def create_options(project_name, extra_opts = 'BROWSER="CHROME" DEBUG="OFF"')
     Dir::mkdir('results') if not File.directory?('results')
     opts = []
-    opts += ["projects/#{project_name}"]
-    opts += ["--require", "projects/#{project_name}/features"]
+    opts += ["project/#{project_name}"]
+    opts += ["--require", "project/#{project_name}/features"]
     opts += ["--format pretty"]
     opts += ["--format html --out results/reports.html"]
     opts += [extra_opts]
@@ -29,8 +29,8 @@ namespace :test do
     Dir::mkdir('results') if not File.directory?('results')
     opts = []
     opts = ["--profile", "#{profile}"]
-    opts += ["projects/#{project_name}"]
-    opts += ["--require", "projects/#{project_name}/features"]
+    opts += ["project/#{project_name}"]
+    opts += ["--require", "project/#{project_name}/features"]
     opts += [extra_opts]
     return opts.join(" ")
   end
