@@ -8,5 +8,5 @@ Feature: Amazon search function
 
     Examples:
     |query|
-    |books|
+    Data:Search/searchitem.CSV
 

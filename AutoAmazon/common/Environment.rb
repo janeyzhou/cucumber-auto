@@ -58,6 +58,7 @@ module Amazon
       else
         @logger.info "close browser..."
         @browser.close
+
       end
     end
 
