@@ -24,19 +24,13 @@ namespace :test do
     return opts.join(" ")
   end
   def create_options_with_tags(project_name, tags, extra_opts = 'BROWSER="CHROME" DEBUG="OFF"')
-    Dir::mkdir('results') if not File.directory?('results')
+    Dir::mkdir('result') if not File.directory?('results')
     opts = []
-<<<<<<< HEAD
     opts += ["project/#{project_name}"]
     opts += ["--require", "project/#{project_name}/features"]
     opts += ["--tag #{tags}"]
     opts += ["--format pretty"]
     opts += ["--format html --out results/reports.html"]
-=======
-    opts = ["--profile", "#{profile}"]
-    opts += ["project/#{project_name}"]
-    opts += ["--require", "project/#{project_name}/features"]
->>>>>>> d7badd16bcb1102532bd37a7644fd0dc156ed426
     opts += [extra_opts]
     return opts.join(" ")
   end
