@@ -42,13 +42,17 @@ module Amazon
       @logger.info "End Scenario: #{scenario.name}"
       if scenario.failed?
       Dir::mkdir('screenshot') if not File.directory?('screenshot')
-      screenshot = "./screenshot/Failed_#{scenario.name.gsub(' ','_').gsub(/[^0-9A-Za-z_]/, '')}.jpg"
+      screenshot = "screenshot/Failed_#{scenario.name.gsub(' ','_').gsub(/[^0-9A-Za-z_]/, '')}.jpg"
       @browser.screenshot.save(screenshot)
      # embed screenshot, 'image/jpg'
-  end
+
+      ENV['ARCHIVE_RESULTS'] = 'no' if ENV['ARCHIVE_RESULTS'].nil?
+
+      end
     end
 
     def teardown
+
       if ENV['DEBUG'] == "ON" || ENV['DEBUG'] == "on"
         @logger.info "Debug model is on, not close the browser."
       else
@@ -56,5 +60,7 @@ module Amazon
         @browser.close
       end
     end
+
+
   end
 end

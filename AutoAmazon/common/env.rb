@@ -1,6 +1,7 @@
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__)))
 require 'watir-webdriver'
 require 'Environment'
+require "zip"
 
 
 $env = Amazon::Environment.new
@@ -33,5 +34,8 @@ end
 
 
 at_exit do
+
   $env.teardown
+
+
 end

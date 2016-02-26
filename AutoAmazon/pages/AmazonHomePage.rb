@@ -14,6 +14,9 @@ module Amazon
     def search_button
       layer.div(:class => 'nav-right')
     end
+    def your_amazon_link
+      layer.link(:id => "nav-your-amazon")
+    end
   end
   Pages.register_page(Amazon::AmazonHomePage, :amazon_home_page)
 end

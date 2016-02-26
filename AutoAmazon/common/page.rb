@@ -35,7 +35,7 @@ module Amazon
       raise 'you must define page id in your page class.'
     end
 
-    def page_mark
+    def title
       raise 'you must define page mark in your page class.'
     end
 
@@ -44,7 +44,7 @@ module Amazon
     end
 
     def self.is_current_page?(browser)
-      self.new(browser).page_mark.exists?
+      self.new(browser).title.exists?
     end
 
     # DODO implement this function using page id.
@@ -77,6 +77,7 @@ module Amazon
     def visit
       @browser.goto url
     end
+
 
   end
 

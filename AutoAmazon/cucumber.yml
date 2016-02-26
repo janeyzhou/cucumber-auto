@@ -1,1 +1,3 @@
-default: --no-source --color --format pretty --format html --out=result/report.html
+
+default: --format pretty --format html --out=results/reports.html
+html_report: --format progress --format html --out=results/reports.html
