@@ -1,3 +1,4 @@
+=begin
 #encoding: utf-8
 require 'csv'
 
@@ -64,3 +65,5 @@ module Cucumber
     end
   end
 end
+
+=end
