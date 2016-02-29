@@ -19,7 +19,7 @@ namespace :test do
     opts += ["project/#{project_name}"]
     opts += ["--require", "project/#{project_name}/features"]
     opts += ["--format pretty"]
-    opts += ["--format html --out results/reports.html --format json --out report.json"]
+    opts += ["--format html --out results/reports.html --format json --out report.json -f json -out cucumber.json"]
     opts += [extra_opts]
     return opts.join(" ")
   end
@@ -30,7 +30,7 @@ namespace :test do
     opts += ["--require", "project/#{project_name}/features"]
     opts += ["--tag #{tags}"]
     opts += ["--format pretty"]
-    opts += ["--format html --out results/reports.html --format json --out report.json"]
+    opts += ["--format html --out results/reports.html --format json --out report.json-f json -out cucumber.json"]
     opts += [extra_opts]
     return opts.join(" ")
   end
